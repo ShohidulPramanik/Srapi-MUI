@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proructs",
+  "info": {
+    "singularName": "proruct",
+    "pluralName": "proructs",
+    "displayName": "Proruct",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "brand": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "rating": {
+      "required": true,
+      "type": "integer"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "prvPrice": {
+      "type": "integer",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categorie.categorie",
+      "inversedBy": "proructs"
+    }
+  }
+}
